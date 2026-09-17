@@ -1,0 +1,585 @@
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================= BODY ================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080a14;
+    color: white;
+    min-height: 100vh;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background: #0c0d18;
+
+    border-bottom: 1px solid #24263a;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+.logo span {
+    color: #06b6d4;
+}
+
+
+/* NAV LINKS */
+
+.navbar nav {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav a {
+    color: #9da3b7;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: white;
+}
+
+
+/* BACK BUTTON */
+
+.back-btn {
+    text-decoration: none;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 9px;
+
+    background: #171a2b;
+
+    border: 1px solid #30354b;
+
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    border-color: #7c3aed;
+
+    background: #211b36;
+}
+
+
+/* ================= HERO ================= */
+
+.learning-hero {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 60px 25px 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+/* HERO ICON */
+
+.hero-icon {
+    width: 85px;
+    height: 85px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 20px;
+
+    background: #122c38;
+
+    color: #06b6d4;
+
+    font-size: 40px;
+
+    border: 1px solid #14566a;
+}
+
+
+/* COURSE LEVEL */
+
+.learning-hero span {
+    color: #8b6cff;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+}
+
+
+/* COURSE TITLE */
+
+.learning-hero h1 {
+    font-size: 45px;
+
+    margin: 8px 0;
+}
+
+
+/* COURSE DESCRIPTION */
+
+.learning-hero p {
+    color: #9298aa;
+
+    line-height: 1.6;
+
+    font-size: 16px;
+}
+
+
+/* ================= MAIN LAYOUT ================= */
+
+.learning-layout {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 20px 25px 80px;
+
+    display: grid;
+
+    grid-template-columns: 250px 1fr;
+
+    gap: 25px;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.lesson-sidebar {
+    background: #101522;
+
+    border: 1px solid #252a3c;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    height: fit-content;
+
+    position: sticky;
+
+    top: 110px;
+}
+
+
+/* SIDEBAR TITLE */
+
+.lesson-sidebar h3 {
+    margin-bottom: 18px;
+
+    font-size: 19px;
+}
+
+.lesson-sidebar h3 i {
+    color: #06b6d4;
+
+    margin-right: 8px;
+}
+
+
+/* LESSON ITEM */
+
+.lesson-item {
+    padding: 13px;
+
+    border-radius: 9px;
+
+    color: #8f95a8;
+
+    cursor: pointer;
+
+    margin-bottom: 6px;
+
+    transition: 0.3s;
+
+    border-left: 3px solid transparent;
+}
+
+.lesson-item:hover {
+    background: #191d2e;
+
+    color: white;
+}
+
+
+/* ACTIVE LESSON */
+
+.lesson-item.active {
+    background: #302151;
+
+    color: white;
+
+    border-left-color: #7c3aed;
+}
+
+
+/* ================= LESSON CONTENT ================= */
+
+.lesson-content {
+    min-width: 0;
+}
+
+
+/* LESSON HEADER */
+
+.lesson-header {
+    margin-bottom: 25px;
+}
+
+.lesson-header > span {
+    color: #06b6d4;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+}
+
+.lesson-header h2 {
+    font-size: 35px;
+
+    margin: 8px 0;
+}
+
+.lesson-header p {
+    color: #9298aa;
+
+    font-size: 16px;
+}
+
+
+/* ================= CONTENT CARD ================= */
+
+.content-card {
+    background: #101522;
+
+    border: 1px solid #252a3c;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+/* CARD HEADING */
+
+.content-card h3 {
+    margin-bottom: 18px;
+
+    font-size: 21px;
+}
+
+.content-card h3 i {
+    color: #06b6d4;
+
+    margin-right: 8px;
+}
+
+
+/* THEORY */
+
+#theoryContent p {
+    color: #aeb4c5;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+
+    font-size: 16px;
+}
+
+#theoryContent p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ================= CONCEPTS ================= */
+
+.concept-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+.concept {
+    padding: 15px;
+
+    background: #171c2a;
+
+    border-radius: 10px;
+
+    color: #aeb4c5;
+
+    line-height: 1.5;
+}
+
+
+.concept i {
+    color: #22c55e;
+
+    margin-right: 8px;
+}
+
+
+/* ================= CODE EXAMPLE ================= */
+
+.code-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+/* COPY BUTTON */
+
+.code-heading button {
+    background: #1c2232;
+
+    border: 1px solid #33394c;
+
+    color: #06b6d4;
+
+    padding: 8px 13px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.code-heading button:hover {
+    background: #243044;
+
+    border-color: #06b6d4;
+}
+
+
+/* CODE */
+
+pre {
+    margin-top: 15px;
+
+    padding: 20px;
+
+    background: #070a11;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+
+    line-height: 1.7;
+
+    border: 1px solid #171c29;
+}
+
+code {
+    color: #dce4f5;
+
+    font-family: Consolas, monospace;
+
+    font-size: 14px;
+
+    white-space: pre;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+.lesson-navigation {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.lesson-navigation button {
+    padding: 13px 20px;
+
+    border-radius: 9px;
+
+    border: 1px solid #30364a;
+
+    background: #151a28;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-weight: 600;
+}
+
+
+.lesson-navigation button:hover:not(:disabled) {
+    border-color: #7c3aed;
+
+    background: #211b36;
+}
+
+
+.lesson-navigation button:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+/* NEXT BUTTON */
+
+#nextBtn {
+    background: #7c3aed;
+
+    border-color: #7c3aed;
+}
+
+#nextBtn:hover:not(:disabled) {
+    background: #8b5cf6;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        height: auto;
+
+        min-height: 75px;
+
+        padding: 15px 5%;
+
+        gap: 15px;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .back-btn {
+        padding: 9px 12px;
+
+        font-size: 13px;
+    }
+
+
+    /* HERO */
+
+    .learning-hero {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 40px 20px;
+    }
+
+    .learning-hero h1 {
+        font-size: 34px;
+    }
+
+
+    /* LAYOUT */
+
+    .learning-layout {
+        grid-template-columns: 1fr;
+
+        padding: 10px 20px 60px;
+    }
+
+
+    /* SIDEBAR */
+
+    .lesson-sidebar {
+        position: static;
+    }
+
+
+    /* CONCEPTS */
+
+    .concept-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* NAVIGATION */
+
+    .lesson-navigation {
+        flex-direction: column;
+    }
+
+    .lesson-navigation button {
+        width: 100%;
+    }
+
+
+    /* CODE */
+
+    pre {
+        padding: 15px;
+    }
+}

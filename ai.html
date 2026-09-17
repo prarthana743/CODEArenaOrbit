@@ -1,0 +1,604 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Assistant | CODEArenaOrbit</title>
+
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- AI Assistant CSS -->
+    <link rel="stylesheet" href="ai.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    >
+
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <nav class="nav-container">
+
+            <div class="logo">
+                CODEArenaOrbit
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#features">
+                        Explore
+                    </a>
+                </li>
+
+                <li>
+                    <a href="missions.html">
+                        Missions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="arena.html">
+                        Arena
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ai.html" class="active">
+                        AI Assistant
+                    </a>
+                </li>
+
+                <li>
+                    <a href="portfolio.html">
+                        Portfolio
+                    </a>
+                </li>
+
+            </ul>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN AI ASSISTANT
+    ========================== -->
+
+    <main class="ai-page">
+
+        <!-- AI HERO -->
+
+        <section class="ai-hero">
+
+            <div class="ai-hero-content">
+
+                <span class="ai-label">
+                    <i class="fa-solid fa-sparkles"></i>
+                    CODEARENA AI
+                </span>
+
+                <h1>
+                    Your Personal
+                    <span>AI Coding Assistant</span>
+                </h1>
+
+                <p>
+                    Learn faster, debug smarter and build better.
+                    Ask questions, understand code and improve
+                    your programming skills with your AI companion.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ASSISTANT WORKSPACE
+        ========================== -->
+
+        <section class="assistant-section">
+
+            <div class="assistant-container">
+
+
+                <!-- =====================
+                     SIDEBAR
+                ====================== -->
+
+                <aside class="assistant-sidebar">
+
+                    <div class="assistant-profile">
+
+                        <div class="ai-avatar">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+
+                        <div>
+                            <h3>Orbit AI</h3>
+
+                            <span>
+                                <i class="fa-solid fa-circle"></i>
+                                Online
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUICK ACTIONS -->
+
+                    <div class="quick-actions">
+
+                        <h4>
+                            QUICK ACTIONS
+                        </h4>
+
+
+                        <button
+                            class="quick-btn"
+                            data-prompt="Explain this concept to me like I am a beginner."
+                        >
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Explain Concept
+                        </button>
+
+
+                        <button
+                            class="quick-btn"
+                            data-prompt="Help me find and understand the bug in my code."
+                        >
+                            <i class="fa-solid fa-bug"></i>
+                            Debug Code
+                        </button>
+
+
+                        <button
+                            class="quick-btn"
+                            data-prompt="Teach me HTML from beginner to advanced level."
+                        >
+                            <i class="fa-brands fa-html5"></i>
+                            Learn HTML
+                        </button>
+
+
+                        <button
+                            class="quick-btn"
+                            data-prompt="Teach me CSS with practical examples."
+                        >
+                            <i class="fa-brands fa-css3-alt"></i>
+                            Learn CSS
+                        </button>
+
+
+                        <button
+                            class="quick-btn"
+                            data-prompt="Teach me JavaScript from basics with examples."
+                        >
+                            <i class="fa-brands fa-js"></i>
+                            Learn JavaScript
+                        </button>
+
+
+                        <button
+                            class="quick-btn"
+                            data-prompt="Give me a coding challenge appropriate for my current level."
+                        >
+                            <i class="fa-solid fa-code"></i>
+                            Coding Challenge
+                        </button>
+
+                    </div>
+
+
+                    <!-- SIDEBAR FOOTER -->
+
+                    <div class="sidebar-footer">
+
+                        <button
+                            id="clearChat"
+                            class="clear-chat-btn"
+                        >
+                            <i class="fa-solid fa-trash"></i>
+                            Clear Chat
+                        </button>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- =====================
+                     CHAT AREA
+                ====================== -->
+
+                <div class="chat-container">
+
+
+                    <!-- CHAT HEADER -->
+
+                    <div class="chat-header">
+
+                        <div class="chat-title">
+
+                            <div class="mini-ai-icon">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+
+                            <div>
+                                <h2>
+                                    Orbit AI
+                                </h2>
+
+                                <p>
+                                    Your coding companion
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="chat-status">
+
+                            <span class="status-dot"></span>
+
+                            Ready to help
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================
+                         MESSAGES
+                    ====================== -->
+
+                    <div
+                        class="chat-messages"
+                        id="chatMessages"
+                    >
+
+                        <!-- WELCOME MESSAGE -->
+
+                        <div class="message ai-message">
+
+                            <div class="message-avatar">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+
+                            <div class="message-content">
+
+                                <div class="message-name">
+                                    Orbit AI
+                                </div>
+
+                                <div class="message-bubble">
+
+                                    <p>
+                                        Hey, coder! 👋
+                                    </p>
+
+                                    <p>
+                                        I'm <strong>Orbit AI</strong>,
+                                        your personal coding assistant.
+                                    </p>
+
+                                    <p>
+                                        I can help you understand
+                                        concepts, debug code, learn
+                                        web development and practice
+                                        programming.
+                                    </p>
+
+                                    <p>
+                                        What are we building today?
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- USER MESSAGES WILL BE INSERTED HERE -->
+
+                    </div>
+
+
+                    <!-- =====================
+                         TYPING INDICATOR
+                    ====================== -->
+
+                    <div
+                        class="typing-indicator"
+                        id="typingIndicator"
+                    >
+
+                        <div class="message-avatar">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+
+                        <div class="typing-bubble">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================
+                         INPUT AREA
+                    ====================== -->
+
+                    <div class="chat-input-area">
+
+                        <div class="input-wrapper">
+
+                            <textarea
+                                id="userInput"
+                                placeholder="Ask Orbit AI anything about coding..."
+                                rows="1"
+                            ></textarea>
+
+
+                            <button
+                                id="sendMessage"
+                                class="send-btn"
+                                title="Send message"
+                            >
+
+                                <i class="fa-solid fa-paper-plane"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="input-footer">
+
+                            <span>
+                                <i class="fa-solid fa-circle-info"></i>
+                                Ask questions, paste code or request
+                                explanations.
+                            </span>
+
+                            <span>
+                                Press Enter to send
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             AI FEATURES
+        ========================== -->
+
+        <section class="ai-features">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    WHAT ORBIT AI CAN DO
+                </span>
+
+                <h2>
+                    Learn. Debug. Build.
+                </h2>
+
+                <p>
+                    One AI assistant for your entire coding journey.
+                </p>
+
+            </div>
+
+
+            <div class="ai-feature-grid">
+
+
+                <article class="ai-feature-card">
+
+                    <div class="ai-feature-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <h3>
+                        Learn Concepts
+                    </h3>
+
+                    <p>
+                        Get simple explanations of programming
+                        concepts with examples and analogies.
+                    </p>
+
+                </article>
+
+
+                <article class="ai-feature-card">
+
+                    <div class="ai-feature-icon">
+                        <i class="fa-solid fa-bug"></i>
+                    </div>
+
+                    <h3>
+                        Debug Your Code
+                    </h3>
+
+                    <p>
+                        Paste your code and understand what went
+                        wrong and how to fix it.
+                    </p>
+
+                </article>
+
+
+                <article class="ai-feature-card">
+
+                    <div class="ai-feature-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <h3>
+                        Generate Code
+                    </h3>
+
+                    <p>
+                        Get coding examples, solutions and
+                        starter templates for your projects.
+                    </p>
+
+                </article>
+
+
+                <article class="ai-feature-card">
+
+                    <div class="ai-feature-icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+
+                    <h3>
+                        Practice
+                    </h3>
+
+                    <p>
+                        Ask for coding challenges and practice
+                        problems based on your skill level.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL CTA
+        ========================== -->
+
+        <section class="ai-cta">
+
+            <div class="ai-cta-content">
+
+                <span class="section-label">
+                    READY TO LEVEL UP?
+                </span>
+
+                <h2>
+                    Your Next Challenge
+                    Starts Here.
+                </h2>
+
+                <p>
+                    Ask Orbit AI a question and continue
+                    your coding journey.
+                </p>
+
+                <button
+                    class="ai-cta-btn"
+                    id="startChatBtn"
+                >
+                    Start Chatting
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 CODEArenaOrbit.
+            Learn. Code. Conquer.
+        </p>
+
+    </footer>
+
+
+    <!-- AI JAVASCRIPT -->
+
+    <script src="ai.js"></script>
+
+
+    <!-- NAVBAR ACTIVE PAGE -->
+
+    <script>
+
+        const currentPage =
+            window.location.pathname
+                .split("/")
+                .pop();
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (link) {
+
+                if (
+                    link.getAttribute("href") ===
+                    currentPage
+                ) {
+
+                    link.classList.add("active");
+
+                }
+
+            });
+
+    </script>
+
+</body>
+
+</html>
+```

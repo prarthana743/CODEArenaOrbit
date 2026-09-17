@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | CODEArenaOrbit</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+
+<body class="login-page">
+
+
+    <!-- =========================
+         LOGIN SECTION
+    ========================== -->
+
+    <section class="login-section">
+
+
+        <!-- BACK TO HOME -->
+
+        <a href="index.html" class="back-home">
+
+            ← Back to Home
+
+        </a>
+
+
+        <!-- =========================
+             LOGIN CARD
+        ========================== -->
+
+        <div class="login-card">
+
+
+            <!-- LOGO -->
+
+            <div class="login-logo">
+
+                CODE<span>ArenaOrbit</span>
+
+            </div>
+
+
+            <!-- =========================
+                 LOGIN BOX
+            ========================== -->
+
+            <div id="login-box">
+
+                <span class="login-label">
+
+                    WELCOME BACK
+
+                </span>
+
+
+                <h1>
+
+                    Ready to <span>Conquer?</span>
+
+                </h1>
+
+
+                <p class="login-description">
+
+                    Continue your coding journey and level up
+                    your developer skills.
+
+                </p>
+
+
+                <!-- LOGIN FORM -->
+
+                <form id="login-form">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="input-group">
+
+                        <label for="email">
+
+                            Email Address
+
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="input-group">
+
+                        <label for="password">
+
+                            Password
+
+                        </label>
+
+
+                        <div class="password-box">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                id="toggle-password"
+                            >
+
+                                👁
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-submit"
+                    >
+
+                        Login →
+
+                    </button>
+
+
+                    <!-- MESSAGE -->
+
+                    <p
+                        id="login-message"
+                        class="login-message"
+                    ></p>
+
+
+                </form>
+
+
+                <!-- SIGNUP -->
+
+                <p class="signup-text">
+
+                    New to CODEArenaOrbit?
+
+                    <a
+                        href="#"
+                        id="show-signup"
+                    >
+
+                        Create Account
+
+                    </a>
+
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 SIGNUP BOX
+            ========================== -->
+
+            <div
+                id="signup-box"
+                style="display: none;"
+            >
+
+                <span class="login-label">
+
+                    CREATE ACCOUNT
+
+                </span>
+
+
+                <h1>
+
+                    Start Your <span>Journey.</span>
+
+                </h1>
+
+
+                <p class="login-description">
+
+                    Create your account and build your
+                    developer profile.
+
+                </p>
+
+
+                <!-- SIGNUP FORM -->
+
+                <form id="signup-form">
+
+
+                    <!-- NAME -->
+
+                    <div class="input-group">
+
+                        <label for="signup-name">
+
+                            Full Name
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="signup-name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="input-group">
+
+                        <label for="signup-email">
+
+                            Email Address
+
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="signup-email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="input-group">
+
+                        <label for="signup-password">
+
+                            Password
+
+                        </label>
+
+
+                        <input
+                            type="password"
+                            id="signup-password"
+                            placeholder="Create a password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="input-group">
+
+                        <label for="signup-confirm-password">
+
+                            Confirm Password
+
+                        </label>
+
+
+                        <input
+                            type="password"
+                            id="signup-confirm-password"
+                            placeholder="Confirm your password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CREATE BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-submit"
+                    >
+
+                        Create Account →
+
+                    </button>
+
+
+                    <!-- MESSAGE -->
+
+                    <p
+                        id="signup-message"
+                        class="login-message"
+                    ></p>
+
+
+                </form>
+
+
+                <!-- BACK TO LOGIN -->
+
+                <p class="signup-text">
+
+                    Already have an account?
+
+                    <a
+                        href="#"
+                        id="show-login"
+                    >
+
+                        Login
+
+                    </a>
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="login.js"></script>
+
+
+</body>
+
+</html>

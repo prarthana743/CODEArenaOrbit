@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Debug Arena | CODEArenaOrbit</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <nav class="nav-container">
+
+            <div class="logo">
+                CODEArenaOrbit
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#features">
+                        Explore
+                    </a>
+                </li>
+
+                <li>
+                    <a href="missions.html">
+                        Missions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="arena.html">
+                        Arena
+                    </a>
+                </li>
+                <li>
+                    <a href="ai.html">
+                        AI Assistant
+                    </a>   
+                </li>
+
+                <li>
+                    <a href="portfolio.html">
+                        Portfolio
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- LIVE XP -->
+
+            <div class="live-xp">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <span id="debug-xp">
+                    500 XP
+                </span>
+
+            </div>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= DEBUG HERO ================= -->
+
+    <section class="debug-hero">
+
+        <span class="section-label">
+            <i class="fa-solid fa-bug"></i>
+            DEBUG ARENA
+        </span>
+
+        <h1>
+            Find the Bug.
+            <span>Fix the Code.</span>
+        </h1>
+
+        <p>
+            Identify coding mistakes, understand why they happen
+            and sharpen your debugging skills.
+        </p>
+
+    </section>
+
+
+    <!-- ================= DEBUG ARENA ================= -->
+
+    <main class="debug-container">
+
+        <!-- TOP INFO -->
+
+        <div class="debug-topbar">
+
+            <div>
+                <span class="debug-small-label">
+                    CURRENT MODE
+                </span>
+
+                <strong>
+                    Debug Challenge
+                </strong>
+            </div>
+
+            <div>
+                <span class="debug-small-label">
+                    REWARD
+                </span>
+
+                <strong id="debug-reward">
+                    +50 XP
+                </strong>
+            </div>
+
+            <div>
+                <span class="debug-small-label">
+                    BUG
+                </span>
+
+                <strong id="debug-number">
+                    01
+                </strong>
+            </div>
+
+        </div>
+
+
+        <!-- CHALLENGE CARD -->
+
+        <section class="debug-card">
+
+            <div class="debug-card-header">
+
+                <div>
+
+                    <span class="debug-tag" id="debug-language">
+                        HTML
+                    </span>
+
+                    <h2 id="debug-title">
+                        Find the HTML Bug
+                    </h2>
+
+                </div>
+
+                <div class="bug-icon">
+
+                    <i class="fa-solid fa-bug"></i>
+
+                </div>
+
+            </div>
+
+
+            <!-- CODE -->
+
+            <div class="code-editor">
+
+                <div class="editor-header">
+
+                    <span>
+                        <i class="fa-solid fa-code"></i>
+                        broken-code.html
+                    </span>
+
+                    <span>
+                        BROKEN
+                    </span>
+
+                </div>
+
+                <pre id="debug-code"></pre>
+
+            </div>
+
+
+            <!-- QUESTION -->
+
+            <div class="debug-question">
+
+                <span class="debug-small-label">
+                    WHAT IS THE BUG?
+                </span>
+
+                <h3 id="debug-question">
+                    Loading challenge...
+                </h3>
+
+            </div>
+
+
+            <!-- OPTIONS -->
+
+            <div
+                class="debug-options"
+                id="debug-options">
+            </div>
+
+
+            <!-- RESULT -->
+
+            <div
+                class="debug-result"
+                id="debug-result">
+            </div>
+
+
+            <!-- ACTION -->
+
+            <button
+                class="debug-check-btn"
+                id="debug-check-btn">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Check Answer
+
+            </button>
+
+
+            <button
+                class="debug-next-btn"
+                id="debug-next-btn"
+                style="display:none;">
+
+                Next Bug
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= DEBUG STATS ================= -->
+
+        <section class="debug-stats">
+
+            <div class="debug-stat">
+
+                <i class="fa-solid fa-bug"></i>
+
+                <div>
+                    <strong id="solved-count">
+                        0
+                    </strong>
+
+                    <span>
+                        Bugs Fixed
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="debug-stat">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <div>
+                    <strong id="session-xp">
+                        0
+                    </strong>
+
+                    <span>
+                        XP Earned
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="debug-stat">
+
+                <i class="fa-solid fa-fire"></i>
+
+                <div>
+                    <strong id="debug-streak">
+                        0
+                    </strong>
+
+                    <span>
+                        Debug Streak
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+
+                <div class="logo">
+                    CODEArenaOrbit
+                </div>
+
+                <p>
+                    Learn. Code. Conquer.
+                </p>
+
+            </div>
+
+            <p>
+                © 2026 CODEArenaOrbit.
+                All rights reserved.
+           <p>
+        Made with <i class="fa-solid fa-heart"></i>
+        by PRARTHANA.
+    </p>
+        </div>
+
+    </footer>
+
+
+    <script src="debug.js"></script>
+
+</body>
+
+</html>

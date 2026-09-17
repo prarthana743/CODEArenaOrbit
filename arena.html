@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arena | CODEArenaOrbit</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <nav class="nav-container">
+
+        <div class="logo">
+            CODEArenaOrbit
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Explore</a></li>
+            <li><a href="missions.html">Missions</a></li>
+            <li><a href="arena.html">Arena</a></li>
+            <li><a href="ai.html">AI Assistant</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+<div class="live-xp">
+    <i class="fa-solid fa-bolt"></i>
+    <span id="live-arena-xp">500 XP</span>
+</div>
+        <a href="login.html" class="login-btn">
+            Login
+        </a>
+
+    </nav>
+</header>
+
+
+<main>
+
+<!-- ================= HERO ================= -->
+
+<section class="arena-hero">
+
+    <span class="section-label">
+        CODEARENA · FINAL WORLD
+    </span>
+
+    <h1>
+        THE CODING
+        <span>ARENA</span>
+    </h1>
+
+    <p>
+        Test your coding skills, defeat challenges,
+        earn XP and level up your developer journey.
+    </p>
+
+    <div class="arena-stats">
+
+        <div class="arena-stat">
+            <strong id="arena-xp">0 XP</strong>
+            <span>TOTAL XP</span>
+        </div>
+
+        <div class="arena-stat">
+            <strong id="arena-level">LEVEL 01</strong>
+            <span>CURRENT LEVEL</span>
+        </div>
+
+        <div class="arena-stat">
+            <strong id="arena-challenges">00</strong>
+            <span>CHALLENGES</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CHALLENGE ZONE ================= -->
+
+<section class="challenge-zone">
+
+    <div class="section-heading">
+
+        <div class="arena-topic-selector">
+
+            <span class="section-label">
+                SELECT YOUR SKILL
+            </span>
+
+            <div class="topic-buttons">
+
+                <button class="topic-btn active" data-topic="html">
+                    <i class="fa-brands fa-html5"></i>
+                    HTML
+                </button>
+
+                <button class="topic-btn" data-topic="css">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    CSS
+                </button>
+
+                <button class="topic-btn" data-topic="javascript">
+                    <i class="fa-brands fa-js"></i>
+                    JavaScript
+                </button>
+
+            </div>
+
+        </div>
+
+        <span class="section-label">
+            CHOOSE YOUR BATTLE
+        </span>
+
+        <h2>
+            Enter the Arena.
+        </h2>
+
+        <p>
+            Choose a challenge, sharpen your skills
+            and earn XP as you progress.
+        </p>
+
+    </div>
+
+
+    <div class="arena-challenges">
+
+        <!-- DAILY CHALLENGE -->
+
+        <div class="arena-card">
+
+            <span class="arena-card-label">
+                DAILY CHALLENGE
+            </span>
+
+            <h3>
+                Quick Code <i class="fa-solid fa-bolt"></i>
+            </h3>
+
+            <p>
+                Solve today's coding challenge and
+                earn XP for your developer journey.
+            </p>
+
+            <div class="arena-card-info">
+
+                <span id="daily-difficulty">
+                    CHALLENGE
+                </span>
+
+                <strong id="daily-xp">
+                    +20 XP
+                </strong>
+
+            </div>
+
+            <button
+                class="arena-btn"
+                id="daily-challenge-btn">
+
+                Start Challenge
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <div
+                class="daily-challenge-box"
+                id="daily-challenge-box">
+
+                <span
+                    class="challenge-label"
+                    id="question-topic-label">
+                    HTML CHALLENGE
+                </span>
+
+                <h3 id="daily-question">
+                    Loading question...
+                </h3>
+
+                <div
+                    class="challenge-options"
+                    id="daily-options">
+                </div>
+
+                <p
+                    class="challenge-result"
+                    id="challenge-result">
+                </p>
+
+                <button
+                    class="arena-btn"
+                    id="next-question-btn"
+                    style="display:none;">
+
+                    Next Question
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOSS -->
+
+        <div class="arena-card boss-arena-card">
+
+            <span class="arena-card-label">
+                FINAL BATTLE
+            </span>
+
+            <h3>
+                Boss Battle
+                <i class="fa-solid fa-crown"></i>
+            </h3>
+
+            <p>
+                Combine your HTML, CSS and JavaScript
+                knowledge to defeat the ultimate challenge.
+            </p>
+
+            <div class="arena-card-info">
+
+                <span>
+                    HARD
+                </span>
+
+                <strong>
+                    +500 XP
+                </strong>
+
+            </div>
+
+            <button
+                class="arena-btn boss-arena-btn">
+
+                Enter Boss Battle
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOSS POPUP ================= -->
+
+<div
+    class="boss-battle-box"
+    id="boss-battle-box">
+
+    <div class="boss-battle-content">
+
+        <button
+            class="close-boss"
+            id="close-boss">
+
+            ×
+
+        </button>
+
+        <span class="boss-label">
+            <i class="fa-solid fa-crown"></i>
+            FINAL BOSS BATTLE
+        </span>
+
+        <h2>
+            The JavaScript Guardian
+        </h2>
+
+        <p class="boss-description">
+            Defeat the guardian by answering the
+            ultimate coding question and earn +500 XP.
+        </p>
+
+        <div class="boss-question">
+
+            <h3>
+                Which JavaScript keyword creates a
+                block-scoped variable whose value
+                cannot be reassigned?
+            </h3>
+
+            <div class="boss-options">
+
+                <button class="boss-option" data-answer="var">
+                    var
+                </button>
+
+                <button class="boss-option" data-answer="let">
+                    let
+                </button>
+
+                <button class="boss-option" data-answer="const">
+                    const
+                </button>
+
+                <button class="boss-option" data-answer="function">
+                    function
+                </button>
+
+            </div>
+
+        </div>
+
+        <p
+            class="boss-result"
+            id="boss-result">
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PUZZLES ================= -->
+
+<section class="coding-puzzles">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            DAILY PUZZLES
+        </span>
+
+        <h2>
+            Sharpen Your Skills.
+        </h2>
+
+        <p>
+            Solve quick coding puzzles and earn
+            additional XP.
+        </p>
+
+    </div>
+
+
+    <div class="puzzle-grid">
+
+        <div class="puzzle-card">
+
+            <div class="puzzle-top">
+
+                <span class="puzzle-number">
+                    01
+                </span>
+
+                <span class="puzzle-difficulty easy">
+                    HTML
+                </span>
+
+            </div>
+
+            <h3>
+                Daily HTML Puzzle
+            </h3>
+
+            <p class="puzzle-question">
+                Loading...
+            </p>
+
+            <div class="puzzle-options"></div>
+
+            <div class="puzzle-footer">
+                <span>
+                    +20 XP
+                </span>
+            </div>
+
+            <p class="puzzle-result"></p>
+
+        </div>
+
+
+        <div class="puzzle-card">
+
+            <div class="puzzle-top">
+
+                <span class="puzzle-number">
+                    02
+                </span>
+
+                <span class="puzzle-difficulty medium">
+                    CSS
+                </span>
+
+            </div>
+
+            <h3>
+                Daily CSS Puzzle
+            </h3>
+
+            <p class="puzzle-question">
+                Loading...
+            </p>
+
+            <div class="puzzle-options"></div>
+
+            <div class="puzzle-footer">
+                <span>
+                    +20 XP
+                </span>
+            </div>
+
+            <p class="puzzle-result"></p>
+
+        </div>
+
+
+        <div class="puzzle-card">
+
+            <div class="puzzle-top">
+
+                <span class="puzzle-number">
+                    03
+                </span>
+
+                <span class="puzzle-difficulty hard">
+                    JAVASCRIPT
+                </span>
+
+            </div>
+
+            <h3>
+                Daily JavaScript Puzzle
+            </h3>
+
+            <p class="puzzle-question">
+                Loading...
+            </p>
+
+            <div class="puzzle-options"></div>
+
+            <div class="puzzle-footer">
+                <span>
+                    +20 XP
+                </span>
+            </div>
+
+            <p class="puzzle-result"></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LEADERBOARD ================= -->
+
+<section class="arena-leaderboard">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            GLOBAL RANKINGS
+        </span>
+
+        <h2>
+            Climb the Leaderboard.
+        </h2>
+
+        <p>
+            Complete challenges, earn XP and
+            rise through the developer rankings.
+        </p>
+
+    </div>
+
+
+    <div class="leaderboard-card">
+
+        <div class="leaderboard-row leaderboard-header">
+
+            <span>RANK</span>
+            <span>DEVELOPER</span>
+            <span>LEVEL</span>
+            <span>XP</span>
+
+        </div>
+
+
+        <div class="leaderboard-row">
+
+            <span class="rank">
+                #01
+            </span>
+
+            <span class="developer">
+                NovaCoder
+            </span>
+
+            <span>
+                Level 12
+            </span>
+
+            <strong>
+                2450 XP
+            </strong>
+
+        </div>
+
+
+        <div class="leaderboard-row">
+
+            <span class="rank">
+                #02
+            </span>
+
+            <span class="developer">
+                ByteMaster
+            </span>
+
+            <span>
+                Level 10
+            </span>
+
+            <strong>
+                2100 XP
+            </strong>
+
+        </div>
+
+
+        <div class="leaderboard-row">
+
+            <span class="rank">
+                #03
+            </span>
+
+            <span class="developer">
+                CodeNinja
+            </span>
+
+            <span>
+                Level 09
+            </span>
+
+            <strong>
+                1850 XP
+            </strong>
+
+        </div>
+
+
+        <div class="leaderboard-row current-player">
+
+            <span
+                class="rank"
+                id="player-rank">
+                #24
+            </span>
+
+            <span class="developer">
+                You
+            </span>
+
+            <span id="leaderboard-level">
+                Level 01
+            </span>
+
+            <strong id="leaderboard-xp">
+                0 XP
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PLAYER PROGRESS ================= -->
+
+<section class="player-progress">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            YOUR PROGRESS
+        </span>
+
+        <h2>
+            Keep Leveling Up.
+        </h2>
+
+        <p>
+            Track your XP, completed challenges
+            and progress toward your next level.
+        </p>
+
+    </div>
+
+
+    <div class="progress-dashboard">
+
+        <div class="progress-card">
+
+            <span class="progress-card-label">
+                TOTAL XP
+            </span>
+
+            <strong id="total-xp">
+                0 XP
+            </strong>
+
+            <p>
+                Your coding experience is growing.
+            </p>
+
+        </div>
+
+
+        <div class="progress-card">
+
+            <span class="progress-card-label">
+                CHALLENGES
+            </span>
+
+            <strong id="completed-challenges">
+                0 SOLVED
+            </strong>
+
+            <p>
+                Complete challenges to improve your rank.
+            </p>
+
+        </div>
+
+
+        <div class="progress-card">
+
+            <span class="progress-card-label">
+                CURRENT LEVEL
+            </span>
+
+            <strong id="current-level">
+                LEVEL 01
+            </strong>
+
+            <p id="level-title">
+                Beginner Developer
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="level-progress">
+
+        <div class="level-progress-top">
+
+            <span id="progress-level">
+                LEVEL 01
+            </span>
+
+            <strong id="progress-text">
+                0% TO NEXT LEVEL
+            </strong>
+
+        </div>
+
+        <div class="level-progress-bar">
+
+            <div
+                class="level-progress-fill"
+                id="progress-fill">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="reset-progress">
+
+        <button id="reset-progress-btn">
+            Reset My Progress
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 CODEArenaOrbit.
+        Learn. Code. Conquer.
+    </p>
+
+    <p>
+        Made with <i class="fa-solid fa-heart"></i>
+        by PRARTHANA.
+    </p>
+
+</footer>
+
+
+<script src="arena.js"></script>
+
+<script>
+
+const currentPage =
+    window.location.pathname
+        .split("/")
+        .pop();
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link) {
+
+        if (
+            link.getAttribute("href") ===
+            currentPage
+        ) {
+            link.classList.add("active");
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

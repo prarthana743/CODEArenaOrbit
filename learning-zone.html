@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Learning Zone | CODEArenaOrbit</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="learning-zone.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            <span>CODE</span>ArenaOrbit
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="missions.html">Missions</a>
+            <a href="arena.html">Arena</a>
+            <a href="ai.html">AI Assistant</a>
+            <a href="portfolio.html">Portfolio</a>
+        </nav>
+
+        <a href="missions.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Missions
+        </a>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- COURSE HERO -->
+
+        <section class="learning-hero">
+
+            <div class="hero-icon" id="courseIcon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <div>
+
+                <span id="courseLevel">BEGINNER WORLD</span>
+
+                <h1 id="courseTitle">
+                    HTML Fundamentals
+                </h1>
+
+                <p id="courseDescription">
+                    Learn the fundamentals of HTML.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LEARNING AREA ================= -->
+
+        <section class="learning-layout">
+
+            <!-- SIDEBAR -->
+
+            <aside class="lesson-sidebar">
+
+                <h3>
+                    <i class="fa-solid fa-list"></i>
+                    Course Content
+                </h3>
+
+                <div id="lessonList"></div>
+
+            </aside>
+
+
+            <!-- LESSON CONTENT -->
+
+            <section class="lesson-content">
+
+                <!-- LESSON HEADER -->
+
+                <div class="lesson-header">
+
+                    <span id="lessonNumber">
+                        LESSON 01
+                    </span>
+
+                    <h2 id="lessonTitle">
+                        What is HTML?
+                    </h2>
+
+                    <p id="lessonDescription">
+                        Understand the foundation of web pages.
+                    </p>
+
+                </div>
+
+
+                <!-- LEARN -->
+
+                <div class="content-card">
+
+                    <h3>
+                        <i class="fa-solid fa-book-open"></i>
+                        Learn
+                    </h3>
+
+                    <div id="theoryContent"></div>
+
+                </div>
+
+
+                <!-- KEY CONCEPTS -->
+
+                <div class="content-card">
+
+                    <h3>
+                        <i class="fa-solid fa-lightbulb"></i>
+                        Key Concepts
+                    </h3>
+
+                    <div id="concepts" class="concept-grid"></div>
+
+                </div>
+
+
+                <!-- CODE EXAMPLE -->
+
+                <div class="content-card">
+
+                    <div class="code-heading">
+
+                        <h3>
+                            <i class="fa-solid fa-code"></i>
+                            Example
+                        </h3>
+
+                        <button id="copyBtn">
+                            <i class="fa-regular fa-copy"></i>
+                            Copy
+                        </button>
+
+                    </div>
+
+                    <pre><code id="codeExample"></code></pre>
+
+                </div>
+
+
+                <!-- LESSON NAVIGATION -->
+
+                <div class="lesson-navigation">
+
+                    <button id="previousBtn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Previous
+                    </button>
+
+                    <button id="nextBtn">
+                        Next Lesson
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="learning-zone.js"></script>
+
+</body>
+
+</html>

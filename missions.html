@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Missions | CODEArenaOrbit</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <style>
+        /* =====================================================
+           MISSIONS PAGE
+        ===================================================== */
+
+        .missions-page {
+            min-height: 100vh;
+        }
+
+        /* HERO */
+
+        .missions-hero {
+            padding: 130px 25px 70px;
+            text-align: center;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .missions-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin: 15px 0;
+            background: linear-gradient(90deg, #ffffff, #06b6d4, #7c3aed);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .missions-hero p {
+            color: var(--text-secondary, #a0a8b8);
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.05rem;
+        }
+
+        /* DAILY MISSION */
+
+        .daily-mission {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 25px;
+        }
+
+        .mission-main-card {
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-main-card::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: #7c3aed;
+            opacity: 0.12;
+            filter: blur(100px);
+            top: -150px;
+            right: -100px;
+            border-radius: 50%;
+        }
+
+        .mission-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .today-label {
+            color: #06b6d4;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .mission-difficulty {
+            padding: 7px 15px;
+            border-radius: 30px;
+            background: rgba(124, 58, 237, 0.15);
+            color: #c4b5fd;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .mission-main-card h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 12px;
+        }
+
+        .mission-description {
+            color: var(--text-secondary, #a0a8b8);
+            max-width: 800px;
+            line-height: 1.8;
+        }
+
+        /* STUDY AREA */
+
+        .study-section {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 25px;
+        }
+
+        .study-card,
+        .concept-card {
+            background: rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 25px;
+        }
+
+        .study-card h3,
+        .concept-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .study-card p {
+            color: var(--text-secondary, #a0a8b8);
+            line-height: 1.8;
+        }
+
+        .concept-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .concept-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            color: var(--text-secondary, #a0a8b8);
+        }
+
+        .concept-item i {
+            color: #06b6d4;
+            margin-top: 4px;
+        }
+
+        /* CODE EXAMPLE */
+
+        .code-example {
+            margin-top: 20px;
+            background: #080b14;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 20px;
+            overflow-x: auto;
+        }
+
+        .code-example pre {
+            margin: 0;
+            color: #dbeafe;
+            font-family: Consolas, monospace;
+            line-height: 1.7;
+            white-space: pre-wrap;
+        }
+
+        /* START BUTTON */
+
+        .start-learning-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding: 14px 25px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .start-learning-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* PROGRESS */
+
+        .daily-progress {
+            margin-top: 35px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 10px;
+            color: var(--text-secondary, #a0a8b8);
+        }
+
+        .progress-header strong {
+            color: white;
+        }
+
+        .mission-progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .mission-progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #7c3aed, #06b6d4);
+            border-radius: 20px;
+            transition: width 0.5s ease;
+        }
+
+        /* QUIZ */
+
+        .quiz-section {
+            max-width: 900px;
+            margin: 0 auto 90px;
+            padding: 0 25px;
+            display: none;
+        }
+
+        .quiz-section.active {
+            display: block;
+        }
+
+        .quiz-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quiz-heading h2 {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+        }
+
+        .quiz-heading p {
+            color: var(--text-secondary, #a0a8b8);
+        }
+
+        .quiz-card {
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 22px;
+            padding: 35px;
+        }
+
+        .question-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #06b6d4;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .quiz-card h3 {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 13px;
+        }
+
+        .quiz-option {
+            width: 100%;
+            padding: 17px 20px;
+            text-align: left;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.035);
+            color: white;
+            cursor: pointer;
+            transition: 0.25s;
+            font-size: 1rem;
+        }
+
+        .quiz-option:hover {
+            border-color: #06b6d4;
+            transform: translateX(4px);
+        }
+
+        .quiz-option.correct {
+            border-color: #22c55e;
+            background: rgba(34, 197, 94, 0.12);
+        }
+
+        .quiz-option.wrong {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.12);
+        }
+
+        .quiz-option:disabled {
+            cursor: not-allowed;
+        }
+
+        .quiz-feedback {
+            min-height: 25px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .next-question-btn {
+            display: none;
+            margin-top: 20px;
+            padding: 13px 22px;
+            border: none;
+            border-radius: 10px;
+            background: #7c3aed;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .next-question-btn.show {
+            display: inline-block;
+        }
+
+        /* RESULT */
+
+        .mission-result {
+            display: none;
+            text-align: center;
+            padding: 35px;
+            margin-top: 25px;
+            border-radius: 18px;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.25);
+        }
+
+        .mission-result.show {
+            display: block;
+        }
+
+        .mission-result i {
+            font-size: 3rem;
+            color: #facc15;
+            margin-bottom: 15px;
+        }
+
+        .mission-result h2 {
+            margin-bottom: 10px;
+        }
+
+        .mission-result p {
+            color: var(--text-secondary, #a0a8b8);
+        }
+
+        /* PLAYER STATS */
+
+        .player-section {
+            max-width: 1200px;
+            margin: 0 auto 90px;
+            padding: 0 25px;
+        }
+
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .player-card {
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .player-card i {
+            font-size: 1.6rem;
+            color: #06b6d4;
+            margin-bottom: 12px;
+        }
+
+        .player-card span {
+            display: block;
+            color: var(--text-secondary, #a0a8b8);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .player-card strong {
+            display: block;
+            margin-top: 7px;
+            font-size: 1.7rem;
+        }
+
+        /* BOSS */
+
+        .boss-section {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 25px;
+        }
+
+        .boss-card {
+            padding: 35px;
+            border-radius: 22px;
+            text-align: center;
+            border: 1px solid rgba(250, 204, 21, 0.2);
+            background: rgba(250, 204, 21, 0.035);
+        }
+
+        .boss-card i {
+            font-size: 2.5rem;
+            color: #facc15;
+            margin-bottom: 15px;
+        }
+
+        .boss-card p {
+            color: var(--text-secondary, #a0a8b8);
+            margin: 10px auto 20px;
+            max-width: 650px;
+        }
+
+        .boss-btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            background: #facc15;
+            color: #111827;
+            font-weight: 800;
+        }
+
+        .boss-btn.locked {
+            opacity: 0.5;
+            pointer-events: none;
+            background: #555;
+            color: white;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+            .study-section {
+                grid-template-columns: 1fr;
+            }
+
+            .player-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-main-card {
+                padding: 25px;
+            }
+
+            .quiz-card {
+                padding: 25px;
+            }
+
+            .mission-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <nav class="nav-container">
+
+            <div class="logo">
+                CODEArenaOrbit
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="index.html#features">Explore</a>
+                </li>
+
+                <li>
+                    <a href="missions.html">Missions</a>
+                </li>
+
+                <li>
+                    <a href="arena.html">Arena</a>
+                </li>
+                <li>
+                   <a href="ai.html">ai assistant</a>
+                </li>
+                <li>
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+
+            </ul>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main class="missions-page">
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="missions-hero">
+
+            <span class="section-label">
+                YOUR DAILY LEARNING JOURNEY
+            </span>
+
+            <h1>
+                Today's Mission.
+            </h1>
+
+            <p>
+                Learn one important concept, test your understanding,
+                earn XP and move one step closer to becoming a better developer.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             DAILY MISSION
+        ====================================================== -->
+
+        <section class="daily-mission">
+
+            <div class="mission-main-card">
+
+                <div class="mission-top">
+
+                    <span class="today-label">
+                        <i class="fa-solid fa-calendar-day"></i>
+                        TODAY'S MISSION
+                    </span>
+
+                    <span class="mission-difficulty" id="missionDifficulty">
+                        Beginner
+                    </span>
+
+                </div>
+
+
+                <h2 id="missionTitle">
+                    HTML Forms
+                </h2>
+
+                <p class="mission-description" id="missionDescription">
+                    Learn how HTML forms collect information from users
+                    and how different form elements work together.
+                </p>
+
+
+                <!-- STUDY AREA -->
+
+                <div class="study-section">
+
+                    <div class="study-card">
+
+                        <h3>
+                            <i class="fa-solid fa-book-open"></i>
+                            Study This Topic
+                        </h3>
+
+                        <p id="studyContent">
+                            HTML forms are used to collect information from
+                            users. A form can contain input fields, labels,
+                            buttons and other controls.
+                        </p>
+
+
+                        <div class="code-example">
+
+<pre id="codeExample"><code>&lt;form&gt;
+    &lt;label&gt;Name&lt;/label&gt;
+    &lt;input type="text"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="concept-card">
+
+                        <h3>
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Key Concepts
+                        </h3>
+
+                        <div class="concept-list" id="conceptList">
+
+                            <div class="concept-item">
+                                <i class="fa-solid fa-check"></i>
+                                <span>&lt;form&gt; creates the form.</span>
+                            </div>
+
+                            <div class="concept-item">
+                                <i class="fa-solid fa-check"></i>
+                                <span>&lt;input&gt; collects user input.</span>
+                            </div>
+
+                            <div class="concept-item">
+                                <i class="fa-solid fa-check"></i>
+                                <span>&lt;label&gt; describes an input.</span>
+                            </div>
+
+                            <div class="concept-item">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Buttons can submit form data.</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+<button
+    type="button"
+    class="start-learning-btn"
+    id="startMissionBtn"
+>
+    <i class="fa-solid fa-play"></i>
+    Start Mission
+</button>
+
+                <!-- DAILY PROGRESS -->
+
+                <div class="daily-progress">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Today's Progress
+                        </span>
+
+                        <strong id="progressText">
+                            0 / 5 Questions
+                        </strong>
+
+                    </div>
+
+                    <div class="mission-progress-bar">
+
+                        <div
+                            class="mission-progress-fill"
+                            id="missionProgress">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             QUIZ
+        ====================================================== -->
+
+        <section class="quiz-section" id="quizSection">
+
+            <div class="quiz-heading">
+
+                <span class="section-label">
+                    MISSION QUIZ
+                </span>
+
+                <h2>
+                    Prove What You Learned.
+                </h2>
+
+                <p>
+                    Answer the questions based on today's lesson.
+                </p>
+
+            </div>
+
+
+            <div class="quiz-card">
+
+                <div class="question-meta">
+
+                    <span id="questionNumber">
+                        QUESTION 1 / 5
+                    </span>
+
+                    <span>
+                        +50 XP
+                    </span>
+
+                </div>
+
+
+                <h3 id="questionText">
+                    Loading question...
+                </h3>
+
+
+                <div class="quiz-options" id="quizOptions">
+                    <!-- JavaScript inserts options -->
+                </div>
+
+
+                <p class="quiz-feedback" id="quizFeedback"></p>
+
+
+                <button
+                    class="next-question-btn"
+                    id="nextQuestionBtn">
+
+                    Next Question
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <div class="mission-result" id="missionResult">
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                    <h2>
+                        Mission Complete!
+                    </h2>
+
+                    <p id="resultText">
+                        You completed today's mission.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PLAYER STATS
+        ====================================================== -->
+
+        <section class="player-section">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    YOUR PROGRESS
+                </span>
+
+                <h2>
+                    Keep Leveling Up.
+                </h2>
+
+                <p>
+                    Every completed mission contributes to your developer journey.
+                </p>
+
+            </div>
+
+
+            <div class="player-grid">
+
+                <div class="player-card">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    <span>
+                        TOTAL XP
+                    </span>
+
+                    <strong id="totalXP">
+                        0 XP
+                    </strong>
+
+                </div>
+
+
+                <div class="player-card">
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                    <span>
+                        CODER LEVEL
+                    </span>
+
+                    <strong id="coderLevel">
+                        LEVEL 01
+                    </strong>
+
+                </div>
+
+
+                <div class="player-card">
+
+                    <i class="fa-solid fa-fire"></i>
+
+                    <span>
+                        DAILY STREAK
+                    </span>
+
+                    <strong id="dailyStreak">
+                        0 DAYS
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             BOSS MISSION
+        ====================================================== -->
+
+        <section class="boss-section">
+
+            <div class="boss-card">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <h2>
+                    Boss Mission
+                </h2>
+
+                <p id="bossDescription">
+                    Complete today's mission to unlock the Boss Mission.
+                </p>
+
+                <a
+                    href="arena.html"
+                    class="boss-btn"
+                    id="bossButton">
+
+                    <i class="fa-solid fa-lock"></i>
+                    Locked
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 CODEArenaOrbit. Learn. Code. Conquer.
+        </p>
+
+        <p>
+            Made with <i class="fa-solid fa-heart"></i> by PRARTHANA.
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         MISSIONS JAVASCRIPT
+    ====================================================== -->
+
+    <script src="missions.js"></script>
+
+</body>
+
+</html>
